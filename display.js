@@ -1,4 +1,5 @@
 const { ProbabilityCalculator } = require("./probabiltyCalc");
+const AsciiTable = require("ascii-table");
 
 const prompt = require("prompt-sync")();
 
@@ -61,20 +62,27 @@ class Display {
 
   static Table(DICES) {
     const probs = ProbabilityCalculator.calculateWinProbabilities(DICES);
-    const table = {};
+    const table = new AsciiTable("Probability of the win fоr the user:");
+
+    const headerRow = ["user dice v"];
+    for (let i = 0; i < DICES.length; i++) {
+      headerRow.push(DICES[i].join(","));
+    }
+    table.setHeading(...headerRow);
 
     for (let i = 0; i < DICES.length; i++) {
-      const rowLabel = DICES[i].join(",");
-      table[rowLabel] = {};
+      const row = [DICES[i].join(",")];
       for (let j = 0; j < DICES.length; j++) {
         if (i === j) {
-          table[rowLabel][DICES[j].join(",")] = `- (0.3333)`;
+          row.push("- (0.3333)");
         } else {
-          table[rowLabel][DICES[j].join(",")] = probs[i][j].toFixed(4);
+          row.push(probs[i][j].toFixed(4));
         }
       }
+      table.addRow(...row);
     }
-    console.table(table);
+
+    console.log(table.toString());
   }
 }
 
