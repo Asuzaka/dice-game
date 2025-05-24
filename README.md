@@ -18,7 +18,7 @@ All random values are generated **before** user input and committed with **HMACs
 
 You can verify:
 
-- `HMAC = HMAC_SHA256(secretKey, number)`
+- `HMAC = HMAC_SHA3-256(secretKey, number)`
 - Ensures the game can’t cheat by changing numbers after seeing your input.
 
 ---
