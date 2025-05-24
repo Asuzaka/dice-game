@@ -14,13 +14,13 @@ class FairGeneration {
       this.secretKey,
       this.computerNumber
     );
-    return this.hmac.toUpperCase();
+    return this.hmac;
   }
 
   calculateResult(userNumber, range) {
     const obj = {
       computerNumber: this.computerNumber,
-      secretKey: this.secretKey.toString("hex").toUpperCase(),
+      secretKey: this.secretKey.toString("hex"),
     };
     if (range) {
       return {

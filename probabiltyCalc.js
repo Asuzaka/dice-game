@@ -1,6 +1,6 @@
 class ProbabilityCalculator {
-  static calculateWinProbabilities(diceSets) {
-    const n = diceSets.length;
+  static calculateWinProbabilities(DICES) {
+    const n = DICES.length;
     const probabilities = Array(n)
       .fill(null)
       .map(() => Array(n).fill(0));
@@ -14,8 +14,8 @@ class ProbabilityCalculator {
 
         let wins = 0;
         let total = 0;
-        for (const a of diceSets[i]) {
-          for (const b of diceSets[j]) {
+        for (const a of DICES[i]) {
+          for (const b of DICES[j]) {
             if (a > b) wins++;
             total++;
           }

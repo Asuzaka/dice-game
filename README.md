@@ -25,4 +25,4 @@ You can verify:
 
 ## ▶️ Gameplay
 
-[![Watch the video](https://img.youtube.com/vi/id/0.jpg)](https://www.youtube.com/watch?v=id)
+[![Watch the video](https://img.youtube.com/vi/_IOe06N6xII/0.jpg)](https://www.youtube.com/watch?v=_IOe06N6xII)
